@@ -34,8 +34,11 @@ incomplete/ambiguous access. Never silently use the first setup record.
 
 Support an external `--tmats` full-replacement override. When supplied, the
 external TMATS governs the whole file and replaces the recording's TMATS for
-the cross-check; do not merge the two. Clearly label the external override in
-the validation report.
+the cross-check; do not merge the two. Still parse the in-file setup, including
+mid-recording changes, and report its differences from the external TMATS.
+Clearly label the external override in the validation report; exact wording
+follows the owner's report-format decision. This behavior must remain consistent
+with `irig106-tmats` #60.
 
 Deliver through quick, small releases: first channel presence and undeclared
 channel reporting, then data-type and time-source mismatch reporting. Each
